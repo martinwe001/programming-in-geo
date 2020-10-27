@@ -1,22 +1,21 @@
-import React from 'react';
-import Header from './LandingPage/Header'
-import MapOslo from './MapComponent/Map';
-import Toolbar from './LandingPage/Toolbar';
-import {FileProvider}  from './LandingPage/ToolbarComponents/FileContext'
-
+import React from "react";
+import MapOslo from "./MapComponent/Map";
+import Toolbar from "./LandingPage/Toolbar";
+import { FileProvider } from "./Context/FileContext";
+import { StyleProvider } from "./Context/StyleContext";
 
 function App() {
-
-  	return (
-		<div id='page'>
-			<Header/>
-			<div id='map-tool'>		
-				<FileProvider>
-					<Toolbar/>
-					<MapOslo></MapOslo>
-				</FileProvider>
-			</div>
-		</div>
+  return (
+    <div id="page">
+      <div id="map-tool">
+        <FileProvider>
+          <StyleProvider>
+            <Toolbar />
+          </StyleProvider>
+          <MapOslo></MapOslo>
+        </FileProvider>
+      </div>
+    </div>
   );
 }
 

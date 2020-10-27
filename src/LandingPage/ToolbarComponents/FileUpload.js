@@ -1,22 +1,36 @@
 import React, { useContext } from "react";
 import "../../App.css";
-import { FileContext } from "./FileContext";
+import { FileContext } from "../../Context/FileContext";
+import { v4 as uuidv4 } from "uuid";
+import randomColor from "randomcolor";
 
 function FileUpload() {
   const [layerList, setLayerList] = useContext(FileContext);
 
-  const onFileChange = (e) => {
+  const onFileChange = (file) => {
+    let name = file.target.files[0].name;
     const fileReader = new FileReader();
-    fileReader.readAsText(e.target.files[0], "UTF-8");
+    fileReader.readAsText(file.target.files[0], "UTF-8");
     fileReader.onload = (e) => {
-      setLayerList((prevLayer) => [...prevLayer, JSON.parse(e.target.result)]);
+      let json = JSON.parse(e.target.result);
+      json["id"] = uuidv4();
+      json["name"] = name;
+      json["index"] = layerList.length;
+      json["color"] = randomColor();
+      setLayerList((prevLayer) => [...prevLayer, json]);
     };
   };
 
   return (
     <div>
       <div id="fileupload">
-        <input type="file" onChange={onFileChange} />
+        <input
+          type="file"
+          onChange={onFileChange}
+          onClick={(event) => {
+            event.target.value = null;
+          }}
+        />
       </div>
     </div>
   );
