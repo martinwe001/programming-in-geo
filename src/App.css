@@ -17,7 +17,7 @@
 }
 #toolbar {
   height: auto;
-  width: 300;
+  width: 300px;
   background-color: white;
   display: flex;
   flex-direction: column;

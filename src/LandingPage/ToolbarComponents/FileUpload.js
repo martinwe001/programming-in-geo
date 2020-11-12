@@ -3,6 +3,7 @@ import "../../App.css";
 import { FileContext } from "../../Context/FileContext";
 import { v4 as uuidv4 } from "uuid";
 import randomColor from "randomcolor";
+import { Button } from "react-bootstrap";
 
 function FileUpload() {
   const [layerList, setLayerList] = useContext(FileContext);
@@ -23,14 +24,19 @@ function FileUpload() {
 
   return (
     <div>
-      <div id="fileupload">
-        <input
-          type="file"
-          onChange={onFileChange}
-          onClick={(event) => {
-            event.target.value = null;
-          }}
-        />
+      <div
+        id="fileupload"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        <Button style={{ width: "80%" }}>
+          <input
+            type="file"
+            onChange={onFileChange}
+            onClick={(event) => {
+              event.target.value = null;
+            }}
+          />
+        </Button>
       </div>
     </div>
   );

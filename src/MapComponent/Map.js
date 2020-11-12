@@ -1,4 +1,3 @@
-import { Edit } from "@material-ui/icons";
 import React, { useContext, useEffect } from "react";
 import { LayersControl, Map, TileLayer } from "react-leaflet";
 import "../App.css";
@@ -20,7 +19,6 @@ function MapOslo() {
       />
       <LayersControl position="topright">
         {layerList.map((data, index) => {
-          console.log(data);
           return (
             <Overlay name={data.name} key={data.id} checked={true}>
               <GeoJSONLayer

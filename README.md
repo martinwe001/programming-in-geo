@@ -73,3 +73,4 @@ Mulige verktøy
 -
 
 - check and display error message from wrong layers in tools
+- let users name layers

@@ -4,6 +4,7 @@ import { FileContext } from "../../Context/FileContext";
 import intersect from "@turf/intersect";
 import { v4 as uuidv4 } from "uuid";
 import randomColor from "randomcolor";
+import Button from "react-bootstrap/Button";
 
 function Intersect() {
   const [layerList, setLayerList] = useContext(FileContext);
@@ -37,7 +38,7 @@ function Intersect() {
     <div>
       <h5>Intersect</h5>
       <div>
-        <select id="intersectSelect1">
+        <select id="intersectSelect1" className="form">
           <option value="" selected disabled hidden>
             Choose here
           </option>
@@ -50,7 +51,7 @@ function Intersect() {
             );
           })}
         </select>
-        <select id="intersectSelect2">
+        <select id="intersectSelect2" className="form2">
           <option value="" selected disabled hidden>
             Choose here
           </option>
@@ -64,7 +65,9 @@ function Intersect() {
           })}
         </select>
       </div>
-      <button onClick={handleSubmit}>Intersect</button>
+      <Button onClick={handleSubmit} className="form">
+        Intersect
+      </Button>
     </div>
   );
 }

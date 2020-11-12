@@ -1,30 +1,31 @@
 import React, { useContext } from "react";
 import "../../App.css";
 import { FileContext } from "../../Context/FileContext";
-import union from "@turf/union";
+import difference from "@turf/difference";
 import { v4 as uuidv4 } from "uuid";
 import randomColor from "randomcolor";
+import Button from "react-bootstrap/Button";
 
-function Union() {
+function Difference() {
   const [layerList, setLayerList] = useContext(FileContext);
 
   const handleSubmit = () => {
-    var layer1name = document.getElementById("unionSelect1").value;
-    var layer2name = document.getElementById("unionSelect2").value;
+    var layer1name = document.getElementById("differenceSelect1").value;
+    var layer2name = document.getElementById("differenceSelect2").value;
     var layer1 = layerList.filter((e) => e.name === layer1name)[0];
     var layer2 = layerList.filter((e) => e.name === layer2name)[0];
 
     try {
       if (layer1.features.length === 1 && layer2.features.length === 1) {
-        var json = union(layer1.features[0], layer2.features[0]);
+        var json = difference(layer1.features[0], layer2.features[0]);
 
         json["id"] = uuidv4();
-        json["name"] = layer1name + "&" + layer2name;
+        json["name"] = "Diff" + layer1name + layer2name;
         json["index"] = layerList.length;
         json["color"] = randomColor();
         setLayerList((prevLayer) => [...prevLayer, json]);
-        document.getElementById("unionSelect1").value = "";
-        document.getElementById("unionSelect2").value = "";
+        document.getElementById("differenceSelect1").value = "";
+        document.getElementById("differenceSelect2").value = "";
       } else {
         console.log("More than 1 polygon");
       }
@@ -35,9 +36,9 @@ function Union() {
 
   return (
     <div>
-      <h5>Union</h5>
+      <h5>Difference</h5>
       <div>
-        <select id="unionSelect1">
+        <select id="differenceSelect1" className="form">
           <option value="" selected disabled hidden>
             Choose here
           </option>
@@ -50,7 +51,7 @@ function Union() {
             );
           })}
         </select>
-        <select id="unionSelect2">
+        <select id="differenceSelect2" className="form2">
           <option value="" selected disabled hidden>
             Choose here
           </option>
@@ -64,9 +65,11 @@ function Union() {
           })}
         </select>
       </div>
-      <button onClick={handleSubmit}>Union</button>
+      <Button onClick={handleSubmit} className="form">
+        Difference
+      </Button>
     </div>
   );
 }
 
-export default Union;
+export default Difference;

@@ -12,7 +12,7 @@ function App() {
           <StyleProvider>
             <Toolbar />
           </StyleProvider>
-          <MapOslo></MapOslo>
+          <MapOslo />
         </FileProvider>
       </div>
     </div>
