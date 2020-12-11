@@ -14,11 +14,11 @@ function Difference() {
     var layer2name = document.getElementById("differenceSelect2").value;
     var layer1 = layerList.filter((e) => e.name === layer1name)[0];
     var layer2 = layerList.filter((e) => e.name === layer2name)[0];
-
     try {
       if (layer1.features.length === 1 && layer2.features.length === 1) {
+        console.log(layer1.features[0], layer2);
         var json = difference(layer1.features[0], layer2.features[0]);
-
+        console.log(json);
         json["id"] = uuidv4();
         json["name"] = "Diff" + layer1name + layer2name;
         json["index"] = layerList.length;

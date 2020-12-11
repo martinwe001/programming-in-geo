@@ -17,6 +17,7 @@ function Intersect() {
 
     try {
       if (layer1.features.length === 1 && layer2.features.length === 1) {
+        console.log(layer1.features[0], layer2);
         var json = intersect(layer1.features[0], layer2.features[0]);
 
         json["id"] = uuidv4();

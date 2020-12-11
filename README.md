@@ -74,3 +74,10 @@ Mulige verktøy
 
 - check and display error message from wrong layers in tools
 - let users name layers
+
+Buffer det kan jeg bruke til noe som er 10 meter unna, men ikke lenger enn 100. Her bruker man også difference.
+Kan legge til clip som jeg kan bruke til å "klippe" lagene så de passer til trondheim.
+Kan lage flere buffer-avstander og kan da unione de sammen.
+Intersect kan brukes til å finne det stedet der hvor lagene overlapper og det er da det beste området!
+
+difference fungerer ikke helt
