@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../../App.css";
 import { FileContext } from "../../Context/FileContext";
 import union from "@turf/union";
@@ -9,12 +9,14 @@ import Button from "react-bootstrap/Button";
 
 function Union() {
   const [layerList, setLayerList] = useContext(FileContext);
+  const [errorM, setErrorM] = useState();
 
   const handleSubmit = () => {
     var layer1name = document.getElementById("unionSelect1").value;
     var layer2name = document.getElementById("unionSelect2").value;
     var layer1 = layerList.filter((e) => e.name === layer1name)[0];
     var layer2 = layerList.filter((e) => e.name === layer2name)[0];
+    var name = document.getElementById("Name").value;
 
     try {
       if (layer1.features.length === 1 && layer2.features.length === 1) {
@@ -22,23 +24,26 @@ function Union() {
           var json = union(layer1.features[0], layer2.features[0]);
 
           json["id"] = uuidv4();
-          json["name"] = layer1name + "&" + layer2name;
+          json["name"] = name === "" ? "Union" : name;
           json["index"] = layerList.length;
           json["color"] = randomColor();
           setLayerList((prevLayer) => [...prevLayer, json]);
           document.getElementById("unionSelect1").value = "";
           document.getElementById("unionSelect2").value = "";
+        } else {
+          setErrorM("Do not overlap");
         }
       } else {
-        console.log("More than 1 polygon");
+        setErrorM("More than 1 polygon");
       }
     } catch (error) {
-      console.log("No layers");
+      setErrorM("Not enough layers");
     }
   };
 
   return (
     <div>
+      <h6 style={{ color: "red" }}>{errorM}</h6>
       <h5>Union</h5>
       <div>
         <select id="unionSelect1" className="form">
@@ -68,6 +73,15 @@ function Union() {
           })}
         </select>
       </div>
+      <h6 style={{ marginTop: "30px" }}>Name</h6>
+      <form className="form">
+        <input
+          type="string"
+          id="Name"
+          name="name"
+          placeholder="Name of layer"
+        />
+      </form>
       <Button onClick={handleSubmit} className="form">
         Union
       </Button>
