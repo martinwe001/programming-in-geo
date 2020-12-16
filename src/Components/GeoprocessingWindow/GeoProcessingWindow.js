@@ -26,7 +26,7 @@ function GeoProcessingWindow() {
 
   return (
     <>
-      <Button variant="warning" onClick={handleShow} style={{ width: "200px" }}>
+      <Button variant="info" onClick={handleShow} style={{ width: "85%" }}>
         Spatial toolbox
         <BuildIcon style={{ fontSize: 18, marginLeft: "20px" }} />
       </Button>
@@ -38,7 +38,7 @@ function GeoProcessingWindow() {
           <DropdownButton
             id="dropdown-variants-Warning"
             variant="warning"
-            title="Choose tool"
+            title={tool}
           >
             <Dropdown.Item onSelect={() => changeState("Buffer")}>
               Buffer

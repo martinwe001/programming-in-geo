@@ -65,13 +65,7 @@ function LayerComponent(item) {
           marginRight: "5px",
         }}
       >
-        <>
-          {vis ? (
-            <VisibilityIcon style={{ fontSize: 14 }} />
-          ) : (
-            <VisibilityOffIcon style={{ fontSize: 14 }} />
-          )}
-        </>
+        <>{vis ? <VisibilityIcon /> : <VisibilityOffIcon />}</>
       </IconButton>
     </>
   );

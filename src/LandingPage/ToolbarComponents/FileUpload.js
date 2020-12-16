@@ -28,7 +28,7 @@ function FileUpload() {
         id="fileupload"
         style={{ display: "flex", justifyContent: "center" }}
       >
-        <Button style={{ width: "80%" }}>
+        <Button style={{ width: "80%" }} variant="info  ">
           <input
             type="file"
             onChange={onFileChange}
