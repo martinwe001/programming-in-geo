@@ -16,7 +16,7 @@ function Toolbar() {
         <FileUpload />
       </div>
       <GeoProcessingWindow />
-      <div id="footer" style={{}}>
+      <div style={{ marginTop: "20px" }}>
         <HelpWindow />
       </div>
     </div>
