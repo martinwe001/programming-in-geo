@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b444cbdf67b4c5d4508b38da1f036061",
+    "revision": "dbfb496fa4e2525b561c3a6b652983d6",
     "url": "/programming-in-geo/index.html"
   },
   {
-    "revision": "edc68d73c1d22255dbb3",
+    "revision": "a5f13b742d4019df9d2b",
     "url": "/programming-in-geo/static/css/main.9c08bfd2.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/programming-in-geo/static/js/2.b56163dd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "edc68d73c1d22255dbb3",
-    "url": "/programming-in-geo/static/js/main.06ae65fb.chunk.js"
+    "revision": "a5f13b742d4019df9d2b",
+    "url": "/programming-in-geo/static/js/main.4d325583.chunk.js"
   },
   {
     "revision": "a991e1fcf7c2f1095d3b",
