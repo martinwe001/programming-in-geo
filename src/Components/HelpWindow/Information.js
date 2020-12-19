@@ -15,8 +15,8 @@ function Information() {
         </a>
         . The goal of this course is to make a small GIS that includes important
         GIS functionality and should be easy to use. The application is buildt
-        as an introduction for using GIS' and should make geamatics students
-        more prepared for QGIS and ArcGIS.
+        as an introduction for using GIS and should make geomatics students more
+        prepared for QGIS and ArcGIS.
       </p>
     </div>
   );
