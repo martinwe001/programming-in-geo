@@ -8,6 +8,13 @@ function MapOslo() {
   const { BaseLayer, Overlay } = LayersControl;
   const [layerList, setLayerList] = useContext(FileContext);
 
+  /*
+  useEffect(() => {
+    localStorage.setItem("layers", JSON.stringify(layerList));
+    console.log(JSON.parse(localStorage.getItem("layers")));
+  }, [layerList]);
+  */
+
   useEffect(() => {
     setLayerList(layerList);
   }, [layerList]);
