@@ -5,6 +5,9 @@ import { v4 as uuidv4 } from "uuid";
 import randomColor from "randomcolor";
 import { Button } from "react-bootstrap";
 
+//Component that handles file uploads, each file is given an ID, name, index and color at upload.
+// This is saved in the JSON file. Saving it in the JSON will allow it to be stored with the geographic data
+// and changeable at a later point in time
 function FileUpload() {
   const [layerList, setLayerList] = useContext(FileContext);
 

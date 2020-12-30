@@ -7,14 +7,19 @@ import VisibilityIcon from "@material-ui/icons/Visibility";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import StylingWindow from "../../Components/StylingWindow/StylingWindow";
 
+// This component is the item that the list in the toolbar consists of.
+// No magic here only a component to display the box around the name with buttons
+// Also handles delete, show, hide and style
 function LayerComponent(item) {
   const [layerList, setLayerList] = useContext(FileContext);
   const [vis, setVis] = useState(true);
 
+  // deletes layer from the layerlist
   const deleteLayer = (id) => {
     setLayerList(layerList.filter((e) => e.id !== id));
   };
 
+  // Hides and shows layers on the map
   const hide = (id) => {
     var layer = document.getElementsByClassName(id);
     for (let part of layer) {

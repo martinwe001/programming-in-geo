@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 
 import HelpWindow from "../Components/HelpWindow/HelpWindow";
 
+//This component is the toolbar to the left in the application window
 function Toolbar() {
   return (
     <div id="toolbar">

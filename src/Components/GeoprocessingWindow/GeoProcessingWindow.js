@@ -12,6 +12,7 @@ import Union from "../ProcessingTools/Union";
 
 import "./GeoprocessingWindow.css";
 
+//Window that includes the Geoprocessing tools
 function GeoProcessingWindow() {
   const [show, setShow] = useState(false);
 

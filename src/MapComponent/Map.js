@@ -4,17 +4,13 @@ import "../App.css";
 import { FileContext } from "../Context/FileContext";
 import GeoJSONLayer from "./GeoJSONLayer";
 
+// Most important component. This component generates and handles the map and all the layers.
+// Map is rerendered each time a layer is added or changed.
 function MapOslo() {
   const { BaseLayer, Overlay } = LayersControl;
   const [layerList, setLayerList] = useContext(FileContext);
 
-  /*
-  useEffect(() => {
-    localStorage.setItem("layers", JSON.stringify(layerList));
-    console.log(JSON.parse(localStorage.getItem("layers")));
-  }, [layerList]);
-  */
-
+  //Function that updates the map with new layers each time layers are added or changed
   useEffect(() => {
     setLayerList(layerList);
   }, [layerList]);
@@ -26,6 +22,7 @@ function MapOslo() {
       />
       <LayersControl position="topright">
         {layerList.map((data, index) => {
+          // creates a geojsonlayer component for each layer in layerlist
           return (
             <Overlay name={data.name} key={data.id} checked={true}>
               <GeoJSONLayer

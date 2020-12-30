@@ -4,6 +4,9 @@ import { FileContext } from "../../Context/FileContext";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import LayerComponent from "./LayerComponent";
 
+//This is the component that creates the drag and drop list for layers.
+//This components will be "filled" with layerComponents
+//Implements react-beautiful-dnd and is mostly a boiler plate set up of the component
 function Layers() {
   const [layerList, setLayerList] = useContext(FileContext);
 
