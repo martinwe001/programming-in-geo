@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { LayersControl, Map, TileLayer } from "react-leaflet";
-import "../App.css";
-import { FileContext } from "../Context/FileContext";
+import "../../App.css";
+import { FileContext } from "../../Context/FileContext";
 import GeoJSONLayer from "./GeoJSONLayer";
 
 // Most important component. This component generates and handles the map and all the layers.

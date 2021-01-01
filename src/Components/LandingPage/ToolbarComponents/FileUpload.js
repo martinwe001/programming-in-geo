@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import "../../App.css";
-import { FileContext } from "../../Context/FileContext";
+import "../../../App.css";
+import { FileContext } from "../../../Context/FileContext";
 import { v4 as uuidv4 } from "uuid";
 import randomColor from "randomcolor";
 import { Button } from "react-bootstrap";

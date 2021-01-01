@@ -1,6 +1,6 @@
 import React from "react";
-import MapOslo from "./MapComponent/Map";
-import Toolbar from "./LandingPage/Toolbar";
+import MapOslo from "./Components/MapComponent/Map";
+import Toolbar from "./Components/LandingPage/Toolbar";
 import { FileProvider } from "./Context/FileContext";
 import { StyleProvider } from "./Context/StyleContext";
 

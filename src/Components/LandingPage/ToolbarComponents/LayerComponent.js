@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-import "../../App.css";
-import { FileContext } from "../../Context/FileContext";
+import "../../../App.css";
+import { FileContext } from "../../../Context/FileContext";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
-import StylingWindow from "../../Components/StylingWindow/StylingWindow";
+import StylingWindow from "../../StylingWindow/StylingWindow";
 
 // This component is the item that the list in the toolbar consists of.
 // No magic here only a component to display the box around the name with buttons

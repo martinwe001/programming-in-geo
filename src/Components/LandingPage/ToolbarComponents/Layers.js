@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import "../../App.css";
-import { FileContext } from "../../Context/FileContext";
+import "../../../App.css";
+import { FileContext } from "../../../Context/FileContext";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import LayerComponent from "./LayerComponent";
 

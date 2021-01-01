@@ -1,12 +1,12 @@
 import React from "react";
-import "../App.css";
+import "../../App.css";
 import FileUpload from "./ToolbarComponents/FileUpload";
 import Layers from "./ToolbarComponents/Layers";
-import GeoProcessingWindow from "../Components/GeoprocessingWindow/GeoProcessingWindow";
+import GeoProcessingWindow from "../GeoprocessingWindow/GeoProcessingWindow";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import Button from "react-bootstrap/Button";
 
-import HelpWindow from "../Components/HelpWindow/HelpWindow";
+import HelpWindow from "../HelpWindow/HelpWindow";
 
 //This component is the toolbar to the left in the application window
 function Toolbar() {
