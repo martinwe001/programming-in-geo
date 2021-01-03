@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/programming-in-geo/static/css/main.9c08bfd2.chunk.css",
-    "main.js": "/programming-in-geo/static/js/main.4d325583.chunk.js",
-    "main.js.map": "/programming-in-geo/static/js/main.4d325583.chunk.js.map",
+    "main.js": "/programming-in-geo/static/js/main.5e07c4c4.chunk.js",
+    "main.js.map": "/programming-in-geo/static/js/main.5e07c4c4.chunk.js.map",
     "runtime-main.js": "/programming-in-geo/static/js/runtime-main.2894bfdb.js",
     "runtime-main.js.map": "/programming-in-geo/static/js/runtime-main.2894bfdb.js.map",
-    "static/js/2.b56163dd.chunk.js": "/programming-in-geo/static/js/2.b56163dd.chunk.js",
-    "static/js/2.b56163dd.chunk.js.map": "/programming-in-geo/static/js/2.b56163dd.chunk.js.map",
+    "static/js/2.7191b936.chunk.js": "/programming-in-geo/static/js/2.7191b936.chunk.js",
+    "static/js/2.7191b936.chunk.js.map": "/programming-in-geo/static/js/2.7191b936.chunk.js.map",
     "index.html": "/programming-in-geo/index.html",
-    "precache-manifest.e4007b4ff7f06408a6cf0721fb767a0d.js": "/programming-in-geo/precache-manifest.e4007b4ff7f06408a6cf0721fb767a0d.js",
+    "precache-manifest.7ee45cd095a0f44d7b3b43b6072c544b.js": "/programming-in-geo/precache-manifest.7ee45cd095a0f44d7b3b43b6072c544b.js",
     "service-worker.js": "/programming-in-geo/service-worker.js",
     "static/css/main.9c08bfd2.chunk.css.map": "/programming-in-geo/static/css/main.9c08bfd2.chunk.css.map",
-    "static/js/2.b56163dd.chunk.js.LICENSE.txt": "/programming-in-geo/static/js/2.b56163dd.chunk.js.LICENSE.txt",
+    "static/js/2.7191b936.chunk.js.LICENSE.txt": "/programming-in-geo/static/js/2.7191b936.chunk.js.LICENSE.txt",
     "static/media/buffer.PNG": "/programming-in-geo/static/media/buffer.e8e1adde.PNG",
     "static/media/difference.PNG": "/programming-in-geo/static/media/difference.b1145980.PNG",
     "static/media/intersect.png": "/programming-in-geo/static/media/intersect.781dc48a.png",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.2894bfdb.js",
-    "static/js/2.b56163dd.chunk.js",
+    "static/js/2.7191b936.chunk.js",
     "static/css/main.9c08bfd2.chunk.css",
-    "static/js/main.4d325583.chunk.js"
+    "static/js/main.5e07c4c4.chunk.js"
   ]
 }
