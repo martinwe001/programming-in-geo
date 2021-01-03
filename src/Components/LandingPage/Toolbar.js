@@ -11,13 +11,13 @@ import HelpWindow from "../HelpWindow/HelpWindow";
 //This component is the toolbar to the left in the application window
 function Toolbar() {
   return (
-    <div id="toolbar">
+    <div id="toolbar" style={{ height: "100%" }}>
       <Layers />
-      <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+      <div style={{ marginBottom: "20px", marginTop: "20px" }}>
         <FileUpload />
       </div>
       <GeoProcessingWindow />
-      <div style={{ marginTop: "20px" }}>
+      <div style={{ marginBottom: "20px", marginTop: "20px" }}>
         <HelpWindow />
       </div>
     </div>

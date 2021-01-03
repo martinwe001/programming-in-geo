@@ -24,7 +24,6 @@ function Layers() {
       style={{
         width: "90%",
         textAlign: "center",
-        maxHeight: "70%",
         marginTop: "20px",
       }}
     >
@@ -42,7 +41,7 @@ function Layers() {
                   minHeight: 350,
                   width: "100%",
                   overflowY: "scroll",
-                  maxHeight: "&0%",
+                  maxHeight: 350,
                   borderRadius: "5px",
                 }}
               >

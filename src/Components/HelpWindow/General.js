@@ -12,7 +12,7 @@ function General() {
       <h6>Layers</h6>
       <p>
         For now the GIS only accepts single polygon layers. If you try to use
-        multi polygon layers the program will throw an error.
+        multi polygon layers the program will not be able to process it.
       </p>
     </div>
   );
