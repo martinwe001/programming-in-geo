@@ -19,23 +19,15 @@ function Intersect() {
     var name = document.getElementById("Name").value;
 
     try {
-      if (layer1.features.length === 1 && layer2.features.length === 1) {
-        try {
-          var json = intersect(layer1.features[0], layer2.features[0]);
+      var json = intersect(layer1, layer2);
 
-          json["id"] = uuidv4();
-          json["name"] = name === "" ? "Intersect" : name;
-          json["index"] = layerList.length;
-          json["color"] = randomColor();
-          setLayerList((prevLayer) => [...prevLayer, json]);
-          document.getElementById("intersectSelect1").value = "";
-          document.getElementById("intersectSelect2").value = "";
-        } catch (error) {
-          setErrorM("They layers do not intersect");
-        }
-      } else {
-        setErrorM("More than 1 polygon");
-      }
+      json["id"] = uuidv4();
+      json["name"] = name === "" ? "Intersect" : name;
+      json["index"] = layerList.length;
+      json["color"] = randomColor();
+      setLayerList((prevLayer) => [...prevLayer, json]);
+      document.getElementById("intersectSelect1").value = "";
+      document.getElementById("intersectSelect2").value = "";
     } catch (error) {
       setErrorM("No layers");
     }

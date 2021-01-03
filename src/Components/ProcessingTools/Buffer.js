@@ -17,12 +17,12 @@ function Buffer() {
       document.getElementById("buffer").value === ""
         ? 100
         : document.getElementById("buffer").value;
-    console.log(bufferDistance);
     var layer = layerList.filter((e) => e.name === layerName)[0];
     var name = document.getElementById("Name").value;
 
     try {
       var json = buffer(layer, bufferDistance / 1000);
+      console.log(json);
       json["id"] = uuidv4();
       json["name"] = name === "" ? "Buffer" : name;
       json["index"] = layerList.length;

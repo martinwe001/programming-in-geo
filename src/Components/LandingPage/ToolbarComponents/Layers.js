@@ -42,7 +42,7 @@ function Layers() {
                   minHeight: 350,
                   width: "100%",
                   overflowY: "scroll",
-                  maxHeight: "70%",
+                  maxHeight: "&0%",
                   borderRadius: "5px",
                 }}
               >

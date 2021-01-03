@@ -6,6 +6,7 @@ import booleanOverlap from "@turf/boolean-overlap";
 import { v4 as uuidv4 } from "uuid";
 import randomColor from "randomcolor";
 import Button from "react-bootstrap/Button";
+import booleanContains from "@turf/boolean-contains";
 
 function Difference() {
   const [layerList, setLayerList] = useContext(FileContext);
@@ -19,23 +20,23 @@ function Difference() {
     var name = document.getElementById("Name").value;
 
     try {
-      if (booleanOverlap(layer1.features[0], layer2.features[0])) {
-        if (layer1.features.length === 1 && layer2.features.length === 1) {
-          try {
-            var json = difference(layer1.features[0], layer2.features[0]);
-            console.log(json);
-            json["id"] = uuidv4();
-            json["name"] = name === "" ? "Difference" : name;
-            json["index"] = layerList.length;
-            json["color"] = randomColor();
-            setLayerList((prevLayer) => [...prevLayer, json]);
-            document.getElementById("differenceSelect1").value = "";
-            document.getElementById("differenceSelect2").value = "";
-          } catch (error) {
-            setErrorM("There is no difference, try reordering the layers");
-          }
-        } else {
-          setErrorM("More than 1 polygon");
+      if (
+        booleanOverlap(layer1, layer2) ||
+        booleanContains(layer1, layer2) ||
+        booleanContains(layer2, layer1)
+      ) {
+        try {
+          var json = difference(layer1, layer2);
+          console.log(json);
+          json["id"] = uuidv4();
+          json["name"] = name === "" ? "Difference" : name;
+          json["index"] = layerList.length;
+          json["color"] = randomColor();
+          setLayerList((prevLayer) => [...prevLayer, json]);
+          document.getElementById("differenceSelect1").value = "";
+          document.getElementById("differenceSelect2").value = "";
+        } catch (error) {
+          setErrorM("There is no difference, try reordering the layers");
         }
       } else {
         setErrorM("Layers do not overlap");

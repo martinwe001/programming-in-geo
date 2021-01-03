@@ -3,6 +3,7 @@ import "../../App.css";
 import { FileContext } from "../../Context/FileContext";
 import union from "@turf/union";
 import booleanOverlap from "@turf/boolean-overlap";
+import booleanContains from "@turf/boolean-contains";
 import { v4 as uuidv4 } from "uuid";
 import randomColor from "randomcolor";
 import Button from "react-bootstrap/Button";
@@ -17,24 +18,26 @@ function Union() {
     var layer1 = layerList.filter((e) => e.name === layer1name)[0];
     var layer2 = layerList.filter((e) => e.name === layer2name)[0];
     var name = document.getElementById("Name").value;
+    console.log(layer1, layer2);
 
     try {
-      if (layer1.features.length === 1 && layer2.features.length === 1) {
-        if (booleanOverlap(layer1.features[0], layer2.features[0])) {
-          var json = union(layer1.features[0], layer2.features[0]);
+      if (
+        booleanOverlap(layer1, layer2) ||
+        booleanContains(layer1, layer2) ||
+        booleanContains(layer2, layer1)
+      ) {
+        var json = union(layer1, layer2);
+        console.log(json);
 
-          json["id"] = uuidv4();
-          json["name"] = name === "" ? "Union" : name;
-          json["index"] = layerList.length;
-          json["color"] = randomColor();
-          setLayerList((prevLayer) => [...prevLayer, json]);
-          document.getElementById("unionSelect1").value = "";
-          document.getElementById("unionSelect2").value = "";
-        } else {
-          setErrorM("Do not overlap");
-        }
+        json["id"] = uuidv4();
+        json["name"] = name === "" ? "Union" : name;
+        json["index"] = layerList.length;
+        json["color"] = randomColor();
+        setLayerList((prevLayer) => [...prevLayer, json]);
+        document.getElementById("unionSelect1").value = "";
+        document.getElementById("unionSelect2").value = "";
       } else {
-        setErrorM("More than 1 polygon");
+        setErrorM("Do not overlap");
       }
     } catch (error) {
       setErrorM("Not enough layers");

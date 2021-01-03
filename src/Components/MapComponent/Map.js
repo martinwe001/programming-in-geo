@@ -15,7 +15,7 @@ function MapOslo() {
     setLayerList(layerList);
   }, [layerList]);
   return (
-    <Map center={[37.77979164123535, -122.430124319877235]} zoom={11}>
+    <Map center={[63.42963170221654, 10.39529800415039]} zoom={14}>
       <TileLayer
         url="https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFydHdhbiIsImEiOiJja2dodWFzazkwaDRnMnJsaTJ6NWN3bm8yIn0.IWZOHx04SkrB-abRPIUd6w"
         attribution='Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
