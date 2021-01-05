@@ -8,7 +8,7 @@ prepared for QGIS and ArcGIS.
 
 ### Tutorial and more Information
 
-More information and a tutorial is available [here](https://github.com/martinwe001/programming-in-geo/blob/master/Informartion&Tutorial.pdf)
+More information and a tutorial is available [here](https://github.com/martinwe001/programming-in-geo/blob/master/Information%26Tutorial.pdf)
 
 ### Resources
 
